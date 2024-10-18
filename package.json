@@ -1,6 +1,6 @@
 {
   "name": "argot-openai",
-  "version": "0.0.1-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Argot OpenAI API",
   "author": "Argot OpenAI <dev-feedback@argot-openai.com>",
   "types": "dist/index.d.ts",
