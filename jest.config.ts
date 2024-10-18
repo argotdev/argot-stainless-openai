@@ -7,9 +7,9 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^argot-openai$': '<rootDir>/src/index.ts',
-    '^argot-openai/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
-    '^argot-openai/(.*)$': '<rootDir>/src/$1',
+    '^argot-stainless-openai$': '<rootDir>/src/index.ts',
+    '^argot-stainless-openai/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
+    '^argot-stainless-openai/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

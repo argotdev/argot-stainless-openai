@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'argot-openai/shims/node'
- *   import 'argot-openai/shims/web'
+ *   import 'argot-stainless-openai/shims/node'
+ *   import 'argot-stainless-openai/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */

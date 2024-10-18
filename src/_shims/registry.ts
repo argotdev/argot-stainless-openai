@@ -42,12 +42,12 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import 'argot-openai/shims/${shims.kind}'\` before importing anything else from argot-openai`,
+      `you must \`import 'argot-stainless-openai/shims/${shims.kind}'\` before importing anything else from argot-stainless-openai`,
     );
   }
   if (kind) {
     throw new Error(
-      `can't \`import 'argot-openai/shims/${shims.kind}'\` after \`import 'argot-openai/shims/${kind}'\``,
+      `can't \`import 'argot-stainless-openai/shims/${shims.kind}'\` after \`import 'argot-stainless-openai/shims/${kind}'\``,
     );
   }
   auto = options.auto;

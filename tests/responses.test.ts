@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'argot-openai/core';
-import { Headers } from 'argot-openai/_shims/index';
+import { createResponseHeaders } from 'argot-stainless-openai/core';
+import { Headers } from 'argot-stainless-openai/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

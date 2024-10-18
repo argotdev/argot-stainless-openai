@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import ArgotOpenAI from 'argot-openai';
+import ArgotOpenAI from 'argot-stainless-openai';
 
 const client = new ArgotOpenAI({
   apiKey: 'My API Key',

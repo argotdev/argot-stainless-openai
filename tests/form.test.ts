@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'argot-openai/core';
-import { Blob } from 'argot-openai/_shims/index';
-import { toFile } from 'argot-openai';
+import { multipartFormRequestOptions, createForm } from 'argot-stainless-openai/core';
+import { Blob } from 'argot-stainless-openai/_shims/index';
+import { toFile } from 'argot-stainless-openai';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

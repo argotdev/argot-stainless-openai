@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'argot-openai/uploads';
-import { File } from 'argot-openai/_shims/index';
+import { toFile, type ResponseLike } from 'argot-stainless-openai/uploads';
+import { File } from 'argot-stainless-openai/_shims/index';
 
 class MyClass {
   name: string = 'foo';
