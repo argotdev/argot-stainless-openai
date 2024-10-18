@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import ArgotOpenAI, { toFile } from 'argot-openai';
+import ArgotOpenAI, { toFile } from 'argot-stainless-openai';
 import { Response } from 'node-fetch';
 
 const client = new ArgotOpenAI({

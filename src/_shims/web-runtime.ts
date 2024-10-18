@@ -9,9 +9,9 @@ export function getRuntime({ manuallyImported }: { manuallyImported?: boolean } 
   const recommendation =
     manuallyImported ?
       `You may need to use polyfills`
-    : `Add one of these imports before your first \`import … from 'argot-openai'\`:
-- \`import 'argot-openai/shims/node'\` (if you're running on Node)
-- \`import 'argot-openai/shims/web'\` (otherwise)
+    : `Add one of these imports before your first \`import … from 'argot-stainless-openai'\`:
+- \`import 'argot-stainless-openai/shims/node'\` (if you're running on Node)
+- \`import 'argot-stainless-openai/shims/web'\` (otherwise)
 `;
 
   let _fetch, _Request, _Response, _Headers;

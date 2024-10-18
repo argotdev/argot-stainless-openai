@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import ArgotOpenAI from 'argot-openai';
-import { APIUserAbortError } from 'argot-openai';
-import { Headers } from 'argot-openai/core';
+import ArgotOpenAI from 'argot-stainless-openai';
+import { APIUserAbortError } from 'argot-stainless-openai';
+import { Headers } from 'argot-stainless-openai/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

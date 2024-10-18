@@ -1,5 +1,5 @@
 {
-  "name": "argot-openai",
+  "name": "argot-stainless-openai",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Argot OpenAI API",
   "author": "Argot OpenAI <dev-feedback@argot-openai.com>",
@@ -60,8 +60,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "argot-openai": ".",
-    "argot-openai/*": "./src/*"
+    "argot-stainless-openai": ".",
+    "argot-stainless-openai/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

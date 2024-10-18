@@ -6,9 +6,9 @@
     "rootDir": "./deno",
     "lib": ["es2020", "DOM"],
     "paths": {
-      "argot-openai/_shims/auto/*": ["deno/_shims/auto/*-deno"],
-      "argot-openai/*": ["deno/*"],
-      "argot-openai": ["deno/index.ts"],
+      "argot-stainless-openai/_shims/auto/*": ["deno/_shims/auto/*-deno"],
+      "argot-stainless-openai/*": ["deno/*"],
+      "argot-stainless-openai": ["deno/index.ts"],
     },
     "noEmit": true,
     "declaration": true,
