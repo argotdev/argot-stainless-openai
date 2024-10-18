@@ -1,4 +1,4 @@
-import { combine, merge, is_buffer, assign_single_source } from 'argot-openai/internal/qs/utils';
+import { combine, merge, is_buffer, assign_single_source } from 'argot-stainless-openai/internal/qs/utils';
 
 describe('merge()', function () {
   // t.deepEqual(merge(null, true), [null, true], 'merges true into null');

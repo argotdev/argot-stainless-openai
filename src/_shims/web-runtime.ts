@@ -9,9 +9,9 @@ export function getRuntime({ manuallyImported }: { manuallyImported?: boolean } 
   const recommendation =
     manuallyImported ?
       `You may need to use polyfills`
-    : `Add one of these imports before your first \`import … from 'argot-openai'\`:
-- \`import 'argot-openai/shims/node'\` (if you're running on Node)
-- \`import 'argot-openai/shims/web'\` (otherwise)
+    : `Add one of these imports before your first \`import … from 'argot-stainless-openai'\`:
+- \`import 'argot-stainless-openai/shims/node'\` (if you're running on Node)
+- \`import 'argot-stainless-openai/shims/web'\` (otherwise)
 `;
 
   let _fetch, _Request, _Response, _Headers;
@@ -95,7 +95,7 @@ export function getRuntime({ manuallyImported }: { manuallyImported?: boolean } 
     getDefaultAgent: (url: string) => undefined,
     fileFromPath: () => {
       throw new Error(
-        'The `fileFromPath` function is only supported in Node. See the README for more details: https://www.github.com/stainless-sdks/argot-openai-node#file-uploads',
+        'The `fileFromPath` function is only supported in Node. See the README for more details: https://www.github.com/argotdev/argot-stainless-openai#file-uploads',
       );
     },
     isFsReadStream: (value: any) => false,
