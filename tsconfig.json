@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "argot-openai/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "argot-openai/*": ["src/*"],
-      "argot-openai": ["src/index.ts"],
+      "argot-stainless-openai/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "argot-stainless-openai/*": ["src/*"],
+      "argot-stainless-openai": ["src/index.ts"],
     },
     "noEmit": true,
 

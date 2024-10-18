@@ -55,12 +55,12 @@ $ cd argot-stainless-openai
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link argot-openai
+$ yarn link argot-stainless-openai
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global argot-openai
+$ pnpm link -—global argot-stainless-openai
 ```
 
 ## Running tests

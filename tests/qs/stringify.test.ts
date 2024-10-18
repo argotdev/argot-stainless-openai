@@ -1,7 +1,7 @@
 import iconv from 'iconv-lite';
-import { stringify } from 'argot-openai/internal/qs';
-import { encode } from 'argot-openai/internal/qs/utils';
-import { StringifyOptions } from 'argot-openai/internal/qs/types';
+import { stringify } from 'argot-stainless-openai/internal/qs';
+import { encode } from 'argot-stainless-openai/internal/qs/utils';
+import { StringifyOptions } from 'argot-stainless-openai/internal/qs/types';
 import { empty_test_cases } from './empty-keys-cases';
 import assert from 'assert';
 
