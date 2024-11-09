@@ -3,8 +3,8 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as RunsAPI from './runs';
 import * as StepsAPI from './steps';
+import { RunStepObject, StepListParams, StepListResponse, StepRetrieveParams, Steps } from './steps';
 
 export class Runs extends APIResource {
   steps: StepsAPI.Steps = new StepsAPI.Steps(this._client);
@@ -682,15 +682,22 @@ export namespace RunSubmitToolOutputsParams {
   }
 }
 
-export namespace Runs {
-  export import RunObject = RunsAPI.RunObject;
-  export import RunListResponse = RunsAPI.RunListResponse;
-  export import RunCreateParams = RunsAPI.RunCreateParams;
-  export import RunListParams = RunsAPI.RunListParams;
-  export import RunSubmitToolOutputsParams = RunsAPI.RunSubmitToolOutputsParams;
-  export import Steps = StepsAPI.Steps;
-  export import RunStepObject = StepsAPI.RunStepObject;
-  export import StepListResponse = StepsAPI.StepListResponse;
-  export import StepRetrieveParams = StepsAPI.StepRetrieveParams;
-  export import StepListParams = StepsAPI.StepListParams;
+Runs.Steps = Steps;
+
+export declare namespace Runs {
+  export {
+    type RunObject as RunObject,
+    type RunListResponse as RunListResponse,
+    type RunCreateParams as RunCreateParams,
+    type RunListParams as RunListParams,
+    type RunSubmitToolOutputsParams as RunSubmitToolOutputsParams,
+  };
+
+  export {
+    Steps as Steps,
+    type RunStepObject as RunStepObject,
+    type StepListResponse as StepListResponse,
+    type StepRetrieveParams as StepRetrieveParams,
+    type StepListParams as StepListParams,
+  };
 }

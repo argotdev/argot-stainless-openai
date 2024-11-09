@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as EditsAPI from './edits';
 import * as Shared from '../shared';
 
 export class Edits extends APIResource {
@@ -65,6 +64,6 @@ export interface EditCreateParams {
   user?: string;
 }
 
-export namespace Edits {
-  export import EditCreateParams = EditsAPI.EditCreateParams;
+export declare namespace Edits {
+  export { type EditCreateParams as EditCreateParams };
 }

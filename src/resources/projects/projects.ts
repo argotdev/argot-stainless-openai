@@ -3,10 +3,33 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ProjectsAPI from './projects';
 import * as APIKeysAPI from './api-keys';
+import {
+  APIKeyDeleteResponse,
+  APIKeyListParams,
+  APIKeyListResponse,
+  APIKeys,
+  ProjectAPIKey,
+} from './api-keys';
 import * as ServiceAccountsAPI from './service-accounts';
+import {
+  ProjectServiceAccount,
+  ServiceAccountCreateParams,
+  ServiceAccountCreateResponse,
+  ServiceAccountDeleteResponse,
+  ServiceAccountListParams,
+  ServiceAccountListResponse,
+  ServiceAccounts,
+} from './service-accounts';
 import * as UsersAPI from './users';
+import {
+  ProjectUser,
+  UserCreateParams,
+  UserDeleteResponse,
+  UserListParams,
+  UserListResponse,
+  Users,
+} from './users';
 
 export class Projects extends APIResource {
   users: UsersAPI.Users = new UsersAPI.Users(this._client);
@@ -131,27 +154,42 @@ export interface ProjectListParams {
   limit?: number;
 }
 
-export namespace Projects {
-  export import Project = ProjectsAPI.Project;
-  export import ProjectListResponse = ProjectsAPI.ProjectListResponse;
-  export import ProjectCreateParams = ProjectsAPI.ProjectCreateParams;
-  export import ProjectListParams = ProjectsAPI.ProjectListParams;
-  export import Users = UsersAPI.Users;
-  export import ProjectUser = UsersAPI.ProjectUser;
-  export import UserListResponse = UsersAPI.UserListResponse;
-  export import UserDeleteResponse = UsersAPI.UserDeleteResponse;
-  export import UserCreateParams = UsersAPI.UserCreateParams;
-  export import UserListParams = UsersAPI.UserListParams;
-  export import ServiceAccounts = ServiceAccountsAPI.ServiceAccounts;
-  export import ProjectServiceAccount = ServiceAccountsAPI.ProjectServiceAccount;
-  export import ServiceAccountCreateResponse = ServiceAccountsAPI.ServiceAccountCreateResponse;
-  export import ServiceAccountListResponse = ServiceAccountsAPI.ServiceAccountListResponse;
-  export import ServiceAccountDeleteResponse = ServiceAccountsAPI.ServiceAccountDeleteResponse;
-  export import ServiceAccountCreateParams = ServiceAccountsAPI.ServiceAccountCreateParams;
-  export import ServiceAccountListParams = ServiceAccountsAPI.ServiceAccountListParams;
-  export import APIKeys = APIKeysAPI.APIKeys;
-  export import ProjectAPIKey = APIKeysAPI.ProjectAPIKey;
-  export import APIKeyListResponse = APIKeysAPI.APIKeyListResponse;
-  export import APIKeyDeleteResponse = APIKeysAPI.APIKeyDeleteResponse;
-  export import APIKeyListParams = APIKeysAPI.APIKeyListParams;
+Projects.Users = Users;
+Projects.ServiceAccounts = ServiceAccounts;
+Projects.APIKeys = APIKeys;
+
+export declare namespace Projects {
+  export {
+    type Project as Project,
+    type ProjectListResponse as ProjectListResponse,
+    type ProjectCreateParams as ProjectCreateParams,
+    type ProjectListParams as ProjectListParams,
+  };
+
+  export {
+    Users as Users,
+    type ProjectUser as ProjectUser,
+    type UserListResponse as UserListResponse,
+    type UserDeleteResponse as UserDeleteResponse,
+    type UserCreateParams as UserCreateParams,
+    type UserListParams as UserListParams,
+  };
+
+  export {
+    ServiceAccounts as ServiceAccounts,
+    type ProjectServiceAccount as ProjectServiceAccount,
+    type ServiceAccountCreateResponse as ServiceAccountCreateResponse,
+    type ServiceAccountListResponse as ServiceAccountListResponse,
+    type ServiceAccountDeleteResponse as ServiceAccountDeleteResponse,
+    type ServiceAccountCreateParams as ServiceAccountCreateParams,
+    type ServiceAccountListParams as ServiceAccountListParams,
+  };
+
+  export {
+    APIKeys as APIKeys,
+    type ProjectAPIKey as ProjectAPIKey,
+    type APIKeyListResponse as APIKeyListResponse,
+    type APIKeyDeleteResponse as APIKeyDeleteResponse,
+    type APIKeyListParams as APIKeyListParams,
+  };
 }

@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ServiceAccountsAPI from './service-accounts';
 
 export class ServiceAccounts extends APIResource {
   /**
@@ -174,11 +173,13 @@ export interface ServiceAccountListParams {
   limit?: number;
 }
 
-export namespace ServiceAccounts {
-  export import ProjectServiceAccount = ServiceAccountsAPI.ProjectServiceAccount;
-  export import ServiceAccountCreateResponse = ServiceAccountsAPI.ServiceAccountCreateResponse;
-  export import ServiceAccountListResponse = ServiceAccountsAPI.ServiceAccountListResponse;
-  export import ServiceAccountDeleteResponse = ServiceAccountsAPI.ServiceAccountDeleteResponse;
-  export import ServiceAccountCreateParams = ServiceAccountsAPI.ServiceAccountCreateParams;
-  export import ServiceAccountListParams = ServiceAccountsAPI.ServiceAccountListParams;
+export declare namespace ServiceAccounts {
+  export {
+    type ProjectServiceAccount as ProjectServiceAccount,
+    type ServiceAccountCreateResponse as ServiceAccountCreateResponse,
+    type ServiceAccountListResponse as ServiceAccountListResponse,
+    type ServiceAccountDeleteResponse as ServiceAccountDeleteResponse,
+    type ServiceAccountCreateParams as ServiceAccountCreateParams,
+    type ServiceAccountListParams as ServiceAccountListParams,
+  };
 }
