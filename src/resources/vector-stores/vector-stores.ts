@@ -3,9 +3,17 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as VectorStoresAPI from './vector-stores';
 import * as FilesAPI from './files';
+import {
+  FileCreateParams,
+  FileDeleteResponse,
+  FileListParams,
+  FileListResponse,
+  Files,
+  VectorStoreFileObject,
+} from './files';
 import * as FileBatchesAPI from './file-batches/file-batches';
+import { FileBatchCreateParams, FileBatches, VectorStoreFileBatchObject } from './file-batches/file-batches';
 
 export class VectorStores extends APIResource {
   files: FilesAPI.Files = new FilesAPI.Files(this._client);
@@ -251,19 +259,30 @@ export interface VectorStoreListParams {
   order?: 'asc' | 'desc';
 }
 
-export namespace VectorStores {
-  export import VectorStoreObject = VectorStoresAPI.VectorStoreObject;
-  export import VectorStoreListResponse = VectorStoresAPI.VectorStoreListResponse;
-  export import VectorStoreDeleteResponse = VectorStoresAPI.VectorStoreDeleteResponse;
-  export import VectorStoreCreateParams = VectorStoresAPI.VectorStoreCreateParams;
-  export import VectorStoreListParams = VectorStoresAPI.VectorStoreListParams;
-  export import Files = FilesAPI.Files;
-  export import VectorStoreFileObject = FilesAPI.VectorStoreFileObject;
-  export import FileListResponse = FilesAPI.FileListResponse;
-  export import FileDeleteResponse = FilesAPI.FileDeleteResponse;
-  export import FileCreateParams = FilesAPI.FileCreateParams;
-  export import FileListParams = FilesAPI.FileListParams;
-  export import FileBatches = FileBatchesAPI.FileBatches;
-  export import VectorStoreFileBatchObject = FileBatchesAPI.VectorStoreFileBatchObject;
-  export import FileBatchCreateParams = FileBatchesAPI.FileBatchCreateParams;
+VectorStores.Files = Files;
+VectorStores.FileBatches = FileBatches;
+
+export declare namespace VectorStores {
+  export {
+    type VectorStoreObject as VectorStoreObject,
+    type VectorStoreListResponse as VectorStoreListResponse,
+    type VectorStoreDeleteResponse as VectorStoreDeleteResponse,
+    type VectorStoreCreateParams as VectorStoreCreateParams,
+    type VectorStoreListParams as VectorStoreListParams,
+  };
+
+  export {
+    Files as Files,
+    type VectorStoreFileObject as VectorStoreFileObject,
+    type FileListResponse as FileListResponse,
+    type FileDeleteResponse as FileDeleteResponse,
+    type FileCreateParams as FileCreateParams,
+    type FileListParams as FileListParams,
+  };
+
+  export {
+    FileBatches as FileBatches,
+    type VectorStoreFileBatchObject as VectorStoreFileBatchObject,
+    type FileBatchCreateParams as FileBatchCreateParams,
+  };
 }

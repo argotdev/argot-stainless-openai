@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as AssistantsAPI from './assistants';
 
 export class Assistants extends APIResource {
   /**
@@ -715,10 +714,12 @@ export interface AssistantListParams {
   order?: 'asc' | 'desc';
 }
 
-export namespace Assistants {
-  export import AssistantObject = AssistantsAPI.AssistantObject;
-  export import AssistantListResponse = AssistantsAPI.AssistantListResponse;
-  export import AssistantDeleteResponse = AssistantsAPI.AssistantDeleteResponse;
-  export import AssistantCreateParams = AssistantsAPI.AssistantCreateParams;
-  export import AssistantListParams = AssistantsAPI.AssistantListParams;
+export declare namespace Assistants {
+  export {
+    type AssistantObject as AssistantObject,
+    type AssistantListResponse as AssistantListResponse,
+    type AssistantDeleteResponse as AssistantDeleteResponse,
+    type AssistantCreateParams as AssistantCreateParams,
+    type AssistantListParams as AssistantListParams,
+  };
 }

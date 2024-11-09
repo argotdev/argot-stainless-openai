@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as OrganizationInvitesAPI from './invites';
 import * as InvitesAPI from '../invites';
 
 export class Invites extends APIResource {
@@ -64,7 +63,6 @@ export interface InviteListParams {
   limit?: number;
 }
 
-export namespace Invites {
-  export import InviteListResponse = OrganizationInvitesAPI.InviteListResponse;
-  export import InviteListParams = OrganizationInvitesAPI.InviteListParams;
+export declare namespace Invites {
+  export { type InviteListResponse as InviteListResponse, type InviteListParams as InviteListParams };
 }

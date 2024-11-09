@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ContentAPI from './content';
 
 export class Content extends APIResource {
   /**
@@ -18,6 +17,6 @@ export class Content extends APIResource {
 
 export type ContentRetrieveResponse = string;
 
-export namespace Content {
-  export import ContentRetrieveResponse = ContentAPI.ContentRetrieveResponse;
+export declare namespace Content {
+  export { type ContentRetrieveResponse as ContentRetrieveResponse };
 }
