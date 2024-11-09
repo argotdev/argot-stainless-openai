@@ -2,9 +2,10 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as AudioAPI from './audio';
 import * as TranscriptionsAPI from './transcriptions';
+import { TranscriptionCreateParams, TranscriptionCreateResponse, Transcriptions } from './transcriptions';
 import * as TranslationsAPI from './translations';
+import { TranslationCreateParams, TranslationCreateResponse, Translations } from './translations';
 import { type Response } from '../../_shims/index';
 
 export class Audio extends APIResource {
@@ -51,12 +52,21 @@ export interface AudioSpeechParams {
   speed?: number;
 }
 
-export namespace Audio {
-  export import AudioSpeechParams = AudioAPI.AudioSpeechParams;
-  export import Transcriptions = TranscriptionsAPI.Transcriptions;
-  export import TranscriptionCreateResponse = TranscriptionsAPI.TranscriptionCreateResponse;
-  export import TranscriptionCreateParams = TranscriptionsAPI.TranscriptionCreateParams;
-  export import Translations = TranslationsAPI.Translations;
-  export import TranslationCreateResponse = TranslationsAPI.TranslationCreateResponse;
-  export import TranslationCreateParams = TranslationsAPI.TranslationCreateParams;
+Audio.Transcriptions = Transcriptions;
+Audio.Translations = Translations;
+
+export declare namespace Audio {
+  export { type AudioSpeechParams as AudioSpeechParams };
+
+  export {
+    Transcriptions as Transcriptions,
+    type TranscriptionCreateResponse as TranscriptionCreateResponse,
+    type TranscriptionCreateParams as TranscriptionCreateParams,
+  };
+
+  export {
+    Translations as Translations,
+    type TranslationCreateResponse as TranslationCreateResponse,
+    type TranslationCreateParams as TranslationCreateParams,
+  };
 }

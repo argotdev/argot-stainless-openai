@@ -3,7 +3,6 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
-import * as BatchesAPI from './batches';
 
 export class Batches extends APIResource {
   /**
@@ -268,9 +267,11 @@ export interface BatchListParams {
   limit?: number;
 }
 
-export namespace Batches {
-  export import Batch = BatchesAPI.Batch;
-  export import BatchListResponse = BatchesAPI.BatchListResponse;
-  export import BatchCreateParams = BatchesAPI.BatchCreateParams;
-  export import BatchListParams = BatchesAPI.BatchListParams;
+export declare namespace Batches {
+  export {
+    type Batch as Batch,
+    type BatchListResponse as BatchListResponse,
+    type BatchCreateParams as BatchCreateParams,
+    type BatchListParams as BatchListParams,
+  };
 }
