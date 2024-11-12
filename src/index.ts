@@ -242,25 +242,6 @@ export class ArgotOpenAI extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export {
-  ArgotOpenAIError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
 ArgotOpenAI.Chat = Chat;
 ArgotOpenAI.Completions = Completions;
 ArgotOpenAI.Images = Images;
@@ -279,7 +260,6 @@ ArgotOpenAI.Organization = Organization;
 ArgotOpenAI.Invites = Invites;
 ArgotOpenAI.Users = Users;
 ArgotOpenAI.Projects = Projects;
-
 export declare namespace ArgotOpenAI {
   export type RequestOptions = Core.RequestOptions;
 
@@ -398,5 +378,22 @@ export declare namespace ArgotOpenAI {
 
   export type ImagesResponse = API.ImagesResponse;
 }
+
+export { toFile, fileFromPath } from 'argot-stainless-openai/uploads';
+export {
+  ArgotOpenAIError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} from 'argot-stainless-openai/error';
 
 export default ArgotOpenAI;
