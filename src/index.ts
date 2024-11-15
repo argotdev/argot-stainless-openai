@@ -379,7 +379,7 @@ export declare namespace ArgotOpenAI {
   export type ImagesResponse = API.ImagesResponse;
 }
 
-export { toFile, fileFromPath } from 'argot-stainless-openai/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   ArgotOpenAIError,
   APIError,
@@ -394,6 +394,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from 'argot-stainless-openai/error';
+} from './error';
 
 export default ArgotOpenAI;
