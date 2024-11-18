@@ -87,7 +87,7 @@ describe('resource runs', () => {
 
   test('submitToolOutputs: only required params', async () => {
     const responsePromise = client.threads.runs.submitToolOutputs('thread_id', 'run_id', {
-      tool_outputs: [{}, {}, {}],
+      tool_outputs: [{}],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -100,11 +100,7 @@ describe('resource runs', () => {
 
   test('submitToolOutputs: required and optional params', async () => {
     const response = await client.threads.runs.submitToolOutputs('thread_id', 'run_id', {
-      tool_outputs: [
-        { output: 'output', tool_call_id: 'tool_call_id' },
-        { output: 'output', tool_call_id: 'tool_call_id' },
-        { output: 'output', tool_call_id: 'tool_call_id' },
-      ],
+      tool_outputs: [{ output: 'output', tool_call_id: 'tool_call_id' }],
       stream: true,
     });
   });
