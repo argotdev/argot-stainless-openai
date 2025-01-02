@@ -1,11 +1,74 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Errors from './error';
-import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
 import * as qs from './internal/qs';
 import * as Core from './core';
+import * as Errors from './error';
+import * as Uploads from './uploads';
 import * as API from './resources/index';
+import {
+  AssistantCreateParams,
+  AssistantDeleteResponse,
+  AssistantListParams,
+  AssistantListResponse,
+  AssistantObject,
+  Assistants,
+} from './resources/assistants';
+import { Batch, BatchCreateParams, BatchListParams, BatchListResponse, Batches } from './resources/batches';
+import { Chat, ChatCompletionsParams, ChatCompletionsResponse } from './resources/chat';
+import { CompletionCreateParams, CompletionCreateResponse, Completions } from './resources/completions';
+import { EmbeddingCreateParams, EmbeddingCreateResponse, Embeddings } from './resources/embeddings';
+import { Invite, InviteCreateParams, InviteDeleteResponse, Invites } from './resources/invites';
+import { Model, ModelDeleteResponse, ModelListResponse, Models } from './resources/models';
+import { ModerationCreateParams, ModerationCreateResponse, Moderations } from './resources/moderations';
+import {
+  User,
+  UserCreateParams,
+  UserDeleteResponse,
+  UserListParams,
+  UserListResponse,
+  Users,
+} from './resources/users';
+import { Audio, AudioSpeechParams } from './resources/audio/audio';
+import {
+  FileCreateParams,
+  FileDeleteResponse,
+  FileListParams,
+  FileListResponse,
+  Files,
+  OpenAIFile,
+} from './resources/files/files';
+import { FineTuning } from './resources/fine-tuning/fine-tuning';
+import { Images } from './resources/images/images';
+import { Organization } from './resources/organization/organization';
+import {
+  Project,
+  ProjectCreateParams,
+  ProjectListParams,
+  ProjectListResponse,
+  Projects,
+} from './resources/projects/projects';
+import {
+  ThreadCreateParams,
+  ThreadDeleteResponse,
+  ThreadObject,
+  ThreadUpdateParams,
+  Threads,
+} from './resources/threads/threads';
+import {
+  Upload,
+  UploadCompleteParams,
+  UploadCreateParams,
+  Uploads as UploadsAPIUploads,
+} from './resources/uploads/uploads';
+import {
+  VectorStoreCreateParams,
+  VectorStoreDeleteResponse,
+  VectorStoreListParams,
+  VectorStoreListResponse,
+  VectorStoreObject,
+  VectorStores,
+} from './resources/vector-stores/vector-stores';
 
 export interface ClientOptions {
   /**
@@ -179,7 +242,145 @@ export class ArgotOpenAI extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
+ArgotOpenAI.Chat = Chat;
+ArgotOpenAI.Completions = Completions;
+ArgotOpenAI.Images = Images;
+ArgotOpenAI.Embeddings = Embeddings;
+ArgotOpenAI.Audio = Audio;
+ArgotOpenAI.Files = Files;
+ArgotOpenAI.Uploads = UploadsAPIUploads;
+ArgotOpenAI.FineTuning = FineTuning;
+ArgotOpenAI.Models = Models;
+ArgotOpenAI.Moderations = Moderations;
+ArgotOpenAI.Assistants = Assistants;
+ArgotOpenAI.Threads = Threads;
+ArgotOpenAI.VectorStores = VectorStores;
+ArgotOpenAI.Batches = Batches;
+ArgotOpenAI.Organization = Organization;
+ArgotOpenAI.Invites = Invites;
+ArgotOpenAI.Users = Users;
+ArgotOpenAI.Projects = Projects;
+export declare namespace ArgotOpenAI {
+  export type RequestOptions = Core.RequestOptions;
+
+  export {
+    Chat as Chat,
+    type ChatCompletionsResponse as ChatCompletionsResponse,
+    type ChatCompletionsParams as ChatCompletionsParams,
+  };
+
+  export {
+    Completions as Completions,
+    type CompletionCreateResponse as CompletionCreateResponse,
+    type CompletionCreateParams as CompletionCreateParams,
+  };
+
+  export { Images as Images };
+
+  export {
+    Embeddings as Embeddings,
+    type EmbeddingCreateResponse as EmbeddingCreateResponse,
+    type EmbeddingCreateParams as EmbeddingCreateParams,
+  };
+
+  export { Audio as Audio, type AudioSpeechParams as AudioSpeechParams };
+
+  export {
+    Files as Files,
+    type OpenAIFile as OpenAIFile,
+    type FileListResponse as FileListResponse,
+    type FileDeleteResponse as FileDeleteResponse,
+    type FileCreateParams as FileCreateParams,
+    type FileListParams as FileListParams,
+  };
+
+  export {
+    UploadsAPIUploads as Uploads,
+    type Upload as Upload,
+    type UploadCreateParams as UploadCreateParams,
+    type UploadCompleteParams as UploadCompleteParams,
+  };
+
+  export { FineTuning as FineTuning };
+
+  export {
+    Models as Models,
+    type Model as Model,
+    type ModelListResponse as ModelListResponse,
+    type ModelDeleteResponse as ModelDeleteResponse,
+  };
+
+  export {
+    Moderations as Moderations,
+    type ModerationCreateResponse as ModerationCreateResponse,
+    type ModerationCreateParams as ModerationCreateParams,
+  };
+
+  export {
+    Assistants as Assistants,
+    type AssistantObject as AssistantObject,
+    type AssistantListResponse as AssistantListResponse,
+    type AssistantDeleteResponse as AssistantDeleteResponse,
+    type AssistantCreateParams as AssistantCreateParams,
+    type AssistantListParams as AssistantListParams,
+  };
+
+  export {
+    Threads as Threads,
+    type ThreadObject as ThreadObject,
+    type ThreadDeleteResponse as ThreadDeleteResponse,
+    type ThreadCreateParams as ThreadCreateParams,
+    type ThreadUpdateParams as ThreadUpdateParams,
+  };
+
+  export {
+    VectorStores as VectorStores,
+    type VectorStoreObject as VectorStoreObject,
+    type VectorStoreListResponse as VectorStoreListResponse,
+    type VectorStoreDeleteResponse as VectorStoreDeleteResponse,
+    type VectorStoreCreateParams as VectorStoreCreateParams,
+    type VectorStoreListParams as VectorStoreListParams,
+  };
+
+  export {
+    Batches as Batches,
+    type Batch as Batch,
+    type BatchListResponse as BatchListResponse,
+    type BatchCreateParams as BatchCreateParams,
+    type BatchListParams as BatchListParams,
+  };
+
+  export { Organization as Organization };
+
+  export {
+    Invites as Invites,
+    type Invite as Invite,
+    type InviteDeleteResponse as InviteDeleteResponse,
+    type InviteCreateParams as InviteCreateParams,
+  };
+
+  export {
+    Users as Users,
+    type User as User,
+    type UserListResponse as UserListResponse,
+    type UserDeleteResponse as UserDeleteResponse,
+    type UserCreateParams as UserCreateParams,
+    type UserListParams as UserListParams,
+  };
+
+  export {
+    Projects as Projects,
+    type Project as Project,
+    type ProjectListResponse as ProjectListResponse,
+    type ProjectCreateParams as ProjectCreateParams,
+    type ProjectListParams as ProjectListParams,
+  };
+
+  export type ImagesResponse = API.ImagesResponse;
+}
+
+export { toFile, fileFromPath } from './uploads';
+export {
   ArgotOpenAIError,
   APIError,
   APIConnectionError,
@@ -193,101 +394,6 @@ export const {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} = Errors;
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
-export namespace ArgotOpenAI {
-  export import RequestOptions = Core.RequestOptions;
-
-  export import Chat = API.Chat;
-  export import ChatCompletionsResponse = API.ChatCompletionsResponse;
-  export import ChatCompletionsParams = API.ChatCompletionsParams;
-
-  export import Completions = API.Completions;
-  export import CompletionCreateResponse = API.CompletionCreateResponse;
-  export import CompletionCreateParams = API.CompletionCreateParams;
-
-  export import Images = API.Images;
-
-  export import Embeddings = API.Embeddings;
-  export import EmbeddingCreateResponse = API.EmbeddingCreateResponse;
-  export import EmbeddingCreateParams = API.EmbeddingCreateParams;
-
-  export import Audio = API.Audio;
-  export import AudioSpeechParams = API.AudioSpeechParams;
-
-  export import Files = API.Files;
-  export import OpenAIFile = API.OpenAIFile;
-  export import FileListResponse = API.FileListResponse;
-  export import FileDeleteResponse = API.FileDeleteResponse;
-  export import FileCreateParams = API.FileCreateParams;
-  export import FileListParams = API.FileListParams;
-
-  export import Uploads = API.Uploads;
-  export import Upload = API.Upload;
-  export import UploadCreateParams = API.UploadCreateParams;
-  export import UploadCompleteParams = API.UploadCompleteParams;
-
-  export import FineTuning = API.FineTuning;
-
-  export import Models = API.Models;
-  export import Model = API.Model;
-  export import ModelListResponse = API.ModelListResponse;
-  export import ModelDeleteResponse = API.ModelDeleteResponse;
-
-  export import Moderations = API.Moderations;
-  export import ModerationCreateResponse = API.ModerationCreateResponse;
-  export import ModerationCreateParams = API.ModerationCreateParams;
-
-  export import Assistants = API.Assistants;
-  export import AssistantObject = API.AssistantObject;
-  export import AssistantListResponse = API.AssistantListResponse;
-  export import AssistantDeleteResponse = API.AssistantDeleteResponse;
-  export import AssistantCreateParams = API.AssistantCreateParams;
-  export import AssistantListParams = API.AssistantListParams;
-
-  export import Threads = API.Threads;
-  export import ThreadObject = API.ThreadObject;
-  export import ThreadDeleteResponse = API.ThreadDeleteResponse;
-  export import ThreadCreateParams = API.ThreadCreateParams;
-  export import ThreadUpdateParams = API.ThreadUpdateParams;
-
-  export import VectorStores = API.VectorStores;
-  export import VectorStoreObject = API.VectorStoreObject;
-  export import VectorStoreListResponse = API.VectorStoreListResponse;
-  export import VectorStoreDeleteResponse = API.VectorStoreDeleteResponse;
-  export import VectorStoreCreateParams = API.VectorStoreCreateParams;
-  export import VectorStoreListParams = API.VectorStoreListParams;
-
-  export import Batches = API.Batches;
-  export import Batch = API.Batch;
-  export import BatchListResponse = API.BatchListResponse;
-  export import BatchCreateParams = API.BatchCreateParams;
-  export import BatchListParams = API.BatchListParams;
-
-  export import Organization = API.Organization;
-
-  export import Invites = API.Invites;
-  export import Invite = API.Invite;
-  export import InviteDeleteResponse = API.InviteDeleteResponse;
-  export import InviteCreateParams = API.InviteCreateParams;
-
-  export import Users = API.Users;
-  export import User = API.User;
-  export import UserListResponse = API.UserListResponse;
-  export import UserDeleteResponse = API.UserDeleteResponse;
-  export import UserCreateParams = API.UserCreateParams;
-  export import UserListParams = API.UserListParams;
-
-  export import Projects = API.Projects;
-  export import Project = API.Project;
-  export import ProjectListResponse = API.ProjectListResponse;
-  export import ProjectCreateParams = API.ProjectCreateParams;
-  export import ProjectListParams = API.ProjectListParams;
-
-  export import ImagesResponse = API.ImagesResponse;
-}
+} from './error';
 
 export default ArgotOpenAI;

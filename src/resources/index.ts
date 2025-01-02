@@ -2,53 +2,66 @@
 
 export * from './shared';
 export {
-  AssistantObject,
-  AssistantListResponse,
-  AssistantDeleteResponse,
-  AssistantCreateParams,
-  AssistantListParams,
   Assistants,
+  type AssistantObject,
+  type AssistantListResponse,
+  type AssistantDeleteResponse,
+  type AssistantCreateParams,
+  type AssistantListParams,
 } from './assistants';
-export { AudioSpeechParams, Audio } from './audio/audio';
-export { Batch, BatchListResponse, BatchCreateParams, BatchListParams, Batches } from './batches';
-export { ChatCompletionsResponse, ChatCompletionsParams, Chat } from './chat';
-export { CompletionCreateResponse, CompletionCreateParams, Completions } from './completions';
-export { EmbeddingCreateResponse, EmbeddingCreateParams, Embeddings } from './embeddings';
+export { Audio, type AudioSpeechParams } from './audio/audio';
+export {
+  Batches,
+  type Batch,
+  type BatchListResponse,
+  type BatchCreateParams,
+  type BatchListParams,
+} from './batches';
+export { Chat, type ChatCompletionsResponse, type ChatCompletionsParams } from './chat';
+export { Completions, type CompletionCreateResponse, type CompletionCreateParams } from './completions';
+export { Embeddings, type EmbeddingCreateResponse, type EmbeddingCreateParams } from './embeddings';
+export {
+  Files,
+  type OpenAIFile,
+  type FileListResponse,
+  type FileDeleteResponse,
+  type FileCreateParams,
+  type FileListParams,
+} from './files/files';
 export { FineTuning } from './fine-tuning/fine-tuning';
 export { Images } from './images/images';
-export { Invite, InviteDeleteResponse, InviteCreateParams, Invites } from './invites';
-export { Model, ModelListResponse, ModelDeleteResponse, Models } from './models';
-export { ModerationCreateResponse, ModerationCreateParams, Moderations } from './moderations';
-export {
-  OpenAIFile,
-  FileListResponse,
-  FileDeleteResponse,
-  FileCreateParams,
-  FileListParams,
-  Files,
-} from './files/files';
+export { Invites, type Invite, type InviteDeleteResponse, type InviteCreateParams } from './invites';
+export { Models, type Model, type ModelListResponse, type ModelDeleteResponse } from './models';
+export { Moderations, type ModerationCreateResponse, type ModerationCreateParams } from './moderations';
 export { Organization } from './organization/organization';
 export {
-  Project,
-  ProjectListResponse,
-  ProjectCreateParams,
-  ProjectListParams,
   Projects,
+  type Project,
+  type ProjectListResponse,
+  type ProjectCreateParams,
+  type ProjectListParams,
 } from './projects/projects';
 export {
-  ThreadObject,
-  ThreadDeleteResponse,
-  ThreadCreateParams,
-  ThreadUpdateParams,
   Threads,
+  type ThreadObject,
+  type ThreadDeleteResponse,
+  type ThreadCreateParams,
+  type ThreadUpdateParams,
 } from './threads/threads';
-export { Upload, UploadCreateParams, UploadCompleteParams, Uploads } from './uploads/uploads';
-export { User, UserListResponse, UserDeleteResponse, UserCreateParams, UserListParams, Users } from './users';
+export { Uploads, type Upload, type UploadCreateParams, type UploadCompleteParams } from './uploads/uploads';
 export {
-  VectorStoreObject,
-  VectorStoreListResponse,
-  VectorStoreDeleteResponse,
-  VectorStoreCreateParams,
-  VectorStoreListParams,
+  Users,
+  type User,
+  type UserListResponse,
+  type UserDeleteResponse,
+  type UserCreateParams,
+  type UserListParams,
+} from './users';
+export {
   VectorStores,
+  type VectorStoreObject,
+  type VectorStoreListResponse,
+  type VectorStoreDeleteResponse,
+  type VectorStoreCreateParams,
+  type VectorStoreListParams,
 } from './vector-stores/vector-stores';

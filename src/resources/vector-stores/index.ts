@@ -1,19 +1,23 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { VectorStoreFileBatchObject, FileBatchCreateParams, FileBatches } from './file-batches/index';
 export {
-  VectorStoreFileObject,
-  FileListResponse,
-  FileDeleteResponse,
-  FileCreateParams,
-  FileListParams,
+  FileBatches,
+  type VectorStoreFileBatchObject,
+  type FileBatchCreateParams,
+} from './file-batches/index';
+export {
   Files,
+  type VectorStoreFileObject,
+  type FileListResponse,
+  type FileDeleteResponse,
+  type FileCreateParams,
+  type FileListParams,
 } from './files';
 export {
-  VectorStoreObject,
-  VectorStoreListResponse,
-  VectorStoreDeleteResponse,
-  VectorStoreCreateParams,
-  VectorStoreListParams,
   VectorStores,
+  type VectorStoreObject,
+  type VectorStoreListResponse,
+  type VectorStoreDeleteResponse,
+  type VectorStoreCreateParams,
+  type VectorStoreListParams,
 } from './vector-stores';

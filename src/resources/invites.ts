@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as InvitesAPI from './invites';
 
 export class Invites extends APIResource {
   /**
@@ -96,8 +95,10 @@ export interface InviteCreateParams {
   role: 'reader' | 'owner';
 }
 
-export namespace Invites {
-  export import Invite = InvitesAPI.Invite;
-  export import InviteDeleteResponse = InvitesAPI.InviteDeleteResponse;
-  export import InviteCreateParams = InvitesAPI.InviteCreateParams;
+export declare namespace Invites {
+  export {
+    type Invite as Invite,
+    type InviteDeleteResponse as InviteDeleteResponse,
+    type InviteCreateParams as InviteCreateParams,
+  };
 }

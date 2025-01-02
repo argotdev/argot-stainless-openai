@@ -11,7 +11,7 @@
     "paths": {
       "argot-stainless-openai/_shims/auto/*": ["src/_shims/auto/*-node"],
       "argot-stainless-openai/*": ["src/*"],
-      "argot-stainless-openai": ["src/index.ts"],
+      "argot-stainless-openai": ["src/index.ts"]
     },
     "noEmit": true,
 
@@ -32,6 +32,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
+		"isolatedModules": false,
 
     "skipLibCheck": true
   }

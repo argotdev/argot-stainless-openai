@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as UsersAPI from './users';
 
 export class Users extends APIResource {
   /**
@@ -135,10 +134,12 @@ export interface UserListParams {
   limit?: number;
 }
 
-export namespace Users {
-  export import ProjectUser = UsersAPI.ProjectUser;
-  export import UserListResponse = UsersAPI.UserListResponse;
-  export import UserDeleteResponse = UsersAPI.UserDeleteResponse;
-  export import UserCreateParams = UsersAPI.UserCreateParams;
-  export import UserListParams = UsersAPI.UserListParams;
+export declare namespace Users {
+  export {
+    type ProjectUser as ProjectUser,
+    type UserListResponse as UserListResponse,
+    type UserDeleteResponse as UserDeleteResponse,
+    type UserCreateParams as UserCreateParams,
+    type UserListParams as UserListParams,
+  };
 }

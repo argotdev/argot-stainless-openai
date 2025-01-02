@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as ChatAPI from './chat';
 
 export class Chat extends APIResource {
   /**
@@ -1049,7 +1048,9 @@ export namespace ChatCompletionsParams {
   }
 }
 
-export namespace Chat {
-  export import ChatCompletionsResponse = ChatAPI.ChatCompletionsResponse;
-  export import ChatCompletionsParams = ChatAPI.ChatCompletionsParams;
+export declare namespace Chat {
+  export {
+    type ChatCompletionsResponse as ChatCompletionsResponse,
+    type ChatCompletionsParams as ChatCompletionsParams,
+  };
 }

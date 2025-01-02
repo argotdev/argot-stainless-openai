@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as FilesAPI from './files';
 
 export class Files extends APIResource {
   /**
@@ -281,10 +280,12 @@ export interface FileListParams {
   order?: 'asc' | 'desc';
 }
 
-export namespace Files {
-  export import VectorStoreFileObject = FilesAPI.VectorStoreFileObject;
-  export import FileListResponse = FilesAPI.FileListResponse;
-  export import FileDeleteResponse = FilesAPI.FileDeleteResponse;
-  export import FileCreateParams = FilesAPI.FileCreateParams;
-  export import FileListParams = FilesAPI.FileListParams;
+export declare namespace Files {
+  export {
+    type VectorStoreFileObject as VectorStoreFileObject,
+    type FileListResponse as FileListResponse,
+    type FileDeleteResponse as FileDeleteResponse,
+    type FileCreateParams as FileCreateParams,
+    type FileListParams as FileListParams,
+  };
 }
