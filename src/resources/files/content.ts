@@ -8,10 +8,7 @@ export class Content extends APIResource {
    * Returns the contents of the specified file.
    */
   retrieve(fileId: string, options?: Core.RequestOptions): Core.APIPromise<string> {
-    return this._client.get(`/files/${fileId}/content`, {
-      ...options,
-      headers: { Accept: 'application/json', ...options?.headers },
-    });
+    return this._client.get(`/files/${fileId}/content`, options);
   }
 }
 
