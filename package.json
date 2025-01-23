@@ -1,6 +1,6 @@
 {
   "name": "argot-stainless-openai",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "The official TypeScript library for the Argot OpenAI API",
   "author": "Argot OpenAI <dev-feedback@argot-openai.com>",
   "types": "dist/index.d.ts",
