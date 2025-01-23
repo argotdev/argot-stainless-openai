@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as AuditLogsAPI from './audit-logs';
 
 export class AuditLogs extends APIResource {
   /**
@@ -808,7 +807,6 @@ export namespace AuditLogListParams {
   }
 }
 
-export namespace AuditLogs {
-  export import AuditLogListResponse = AuditLogsAPI.AuditLogListResponse;
-  export import AuditLogListParams = AuditLogsAPI.AuditLogListParams;
+export declare namespace AuditLogs {
+  export { type AuditLogListResponse as AuditLogListResponse, type AuditLogListParams as AuditLogListParams };
 }

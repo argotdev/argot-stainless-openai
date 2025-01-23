@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as APIKeysAPI from './api-keys';
 import * as ServiceAccountsAPI from './service-accounts';
 import * as UsersAPI from './users';
 
@@ -134,9 +133,11 @@ export interface APIKeyListParams {
   limit?: number;
 }
 
-export namespace APIKeys {
-  export import ProjectAPIKey = APIKeysAPI.ProjectAPIKey;
-  export import APIKeyListResponse = APIKeysAPI.APIKeyListResponse;
-  export import APIKeyDeleteResponse = APIKeysAPI.APIKeyDeleteResponse;
-  export import APIKeyListParams = APIKeysAPI.APIKeyListParams;
+export declare namespace APIKeys {
+  export {
+    type ProjectAPIKey as ProjectAPIKey,
+    type APIKeyListResponse as APIKeyListResponse,
+    type APIKeyDeleteResponse as APIKeyDeleteResponse,
+    type APIKeyListParams as APIKeyListParams,
+  };
 }

@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as CheckpointsAPI from './checkpoints';
 
 export class Checkpoints extends APIResource {
   /**
@@ -115,7 +114,9 @@ export interface CheckpointListParams {
   limit?: number;
 }
 
-export namespace Checkpoints {
-  export import CheckpointListResponse = CheckpointsAPI.CheckpointListResponse;
-  export import CheckpointListParams = CheckpointsAPI.CheckpointListParams;
+export declare namespace Checkpoints {
+  export {
+    type CheckpointListResponse as CheckpointListResponse,
+    type CheckpointListParams as CheckpointListParams,
+  };
 }

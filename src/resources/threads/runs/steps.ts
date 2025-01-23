@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as StepsAPI from './steps';
 
 export class Steps extends APIResource {
   /**
@@ -515,9 +514,11 @@ export interface StepListParams {
   order?: 'asc' | 'desc';
 }
 
-export namespace Steps {
-  export import RunStepObject = StepsAPI.RunStepObject;
-  export import StepListResponse = StepsAPI.StepListResponse;
-  export import StepRetrieveParams = StepsAPI.StepRetrieveParams;
-  export import StepListParams = StepsAPI.StepListParams;
+export declare namespace Steps {
+  export {
+    type RunStepObject as RunStepObject,
+    type StepListResponse as StepListResponse,
+    type StepRetrieveParams as StepRetrieveParams,
+    type StepListParams as StepListParams,
+  };
 }

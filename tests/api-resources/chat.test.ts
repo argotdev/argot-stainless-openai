@@ -50,14 +50,6 @@ describe('resource chat', () => {
           function: { name: 'name', description: 'description', parameters: { foo: 'bar' }, strict: true },
           type: 'function',
         },
-        {
-          function: { name: 'name', description: 'description', parameters: { foo: 'bar' }, strict: true },
-          type: 'function',
-        },
-        {
-          function: { name: 'name', description: 'description', parameters: { foo: 'bar' }, strict: true },
-          type: 'function',
-        },
       ],
       top_logprobs: 0,
       top_p: 1,

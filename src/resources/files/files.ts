@@ -3,8 +3,8 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as FilesAPI from './files';
 import * as ContentAPI from './content';
+import { Content, ContentRetrieveResponse } from './content';
 
 export class Files extends APIResource {
   content: ContentAPI.Content = new ContentAPI.Content(this._client);
@@ -106,13 +106,13 @@ export interface OpenAIFile {
     | 'vision';
 
   /**
-   * @deprecated: Deprecated. The current status of the file, which can be either
+   * @deprecated Deprecated. The current status of the file, which can be either
    * `uploaded`, `processed`, or `error`.
    */
   status: 'uploaded' | 'processed' | 'error';
 
   /**
-   * @deprecated: Deprecated. For details on why a fine-tuning training file failed
+   * @deprecated Deprecated. For details on why a fine-tuning training file failed
    * validation, see the `error` field on `fine_tuning.job`.
    */
   status_details?: string;
@@ -156,12 +156,16 @@ export interface FileListParams {
   purpose?: string;
 }
 
-export namespace Files {
-  export import OpenAIFile = FilesAPI.OpenAIFile;
-  export import FileListResponse = FilesAPI.FileListResponse;
-  export import FileDeleteResponse = FilesAPI.FileDeleteResponse;
-  export import FileCreateParams = FilesAPI.FileCreateParams;
-  export import FileListParams = FilesAPI.FileListParams;
-  export import Content = ContentAPI.Content;
-  export import ContentRetrieveResponse = ContentAPI.ContentRetrieveResponse;
+Files.Content = Content;
+
+export declare namespace Files {
+  export {
+    type OpenAIFile as OpenAIFile,
+    type FileListResponse as FileListResponse,
+    type FileDeleteResponse as FileDeleteResponse,
+    type FileCreateParams as FileCreateParams,
+    type FileListParams as FileListParams,
+  };
+
+  export { Content as Content, type ContentRetrieveResponse as ContentRetrieveResponse };
 }

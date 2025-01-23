@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as GenerationsAPI from './generations';
 import * as Shared from '../shared';
 
 export class Generations extends APIResource {
@@ -71,6 +70,6 @@ export interface GenerationCreateParams {
   user?: string;
 }
 
-export namespace Generations {
-  export import GenerationCreateParams = GenerationsAPI.GenerationCreateParams;
+export declare namespace Generations {
+  export { type GenerationCreateParams as GenerationCreateParams };
 }

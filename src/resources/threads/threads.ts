@@ -3,9 +3,24 @@
 import { APIResource } from '../../resource';
 import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
-import * as ThreadsAPI from './threads';
 import * as MessagesAPI from './messages';
+import {
+  MessageCreateParams,
+  MessageDeleteResponse,
+  MessageListParams,
+  MessageListResponse,
+  MessageObject,
+  Messages,
+} from './messages';
 import * as RunsAPI from './runs/runs';
+import {
+  RunCreateParams,
+  RunListParams,
+  RunListResponse,
+  RunObject,
+  RunSubmitToolOutputsParams,
+  Runs,
+} from './runs/runs';
 
 export class Threads extends APIResource {
   messages: MessagesAPI.Messages = new MessagesAPI.Messages(this._client);
@@ -301,7 +316,7 @@ export namespace ThreadCreateParams {
   export interface ToolResources {
     code_interpreter?: ToolResources.CodeInterpreter;
 
-    file_search?: ToolResources.UnionMember0 | ToolResources.UnionMember1;
+    file_search?: ToolResources.FileSearch;
   }
 
   export namespace ToolResources {
@@ -314,100 +329,22 @@ export namespace ThreadCreateParams {
       file_ids?: Array<string>;
     }
 
-    export interface UnionMember0 {
-      /**
-       * The [vector store](/docs/api-reference/vector-stores/object) attached to this
-       * thread. There can be a maximum of 1 vector store attached to the thread.
-       */
-      vector_store_ids: Array<string>;
-
-      /**
-       * A helper to create a [vector store](/docs/api-reference/vector-stores/object)
-       * with file_ids and attach it to this thread. There can be a maximum of 1 vector
-       * store attached to the thread.
-       */
-      vector_stores?: Array<UnionMember0.VectorStore>;
-    }
-
-    export namespace UnionMember0 {
-      export interface VectorStore {
-        /**
-         * The chunking strategy used to chunk the file(s). If not set, will use the `auto`
-         * strategy.
-         */
-        chunking_strategy?: VectorStore.AutoChunkingStrategy | VectorStore.StaticChunkingStrategy;
-
-        /**
-         * A list of [file](/docs/api-reference/files) IDs to add to the vector store.
-         * There can be a maximum of 10000 files in a vector store.
-         */
-        file_ids?: Array<string>;
-
-        /**
-         * Set of 16 key-value pairs that can be attached to a vector store. This can be
-         * useful for storing additional information about the vector store in a structured
-         * format. Keys can be a maximum of 64 characters long and values can be a maximum
-         * of 512 characters long.
-         */
-        metadata?: unknown;
-      }
-
-      export namespace VectorStore {
-        /**
-         * The default strategy. This strategy currently uses a `max_chunk_size_tokens` of
-         * `800` and `chunk_overlap_tokens` of `400`.
-         */
-        export interface AutoChunkingStrategy {
-          /**
-           * Always `auto`.
-           */
-          type: 'auto';
-        }
-
-        export interface StaticChunkingStrategy {
-          static: StaticChunkingStrategy.Static;
-
-          /**
-           * Always `static`.
-           */
-          type: 'static';
-        }
-
-        export namespace StaticChunkingStrategy {
-          export interface Static {
-            /**
-             * The number of tokens that overlap between chunks. The default value is `400`.
-             *
-             * Note that the overlap must not exceed half of `max_chunk_size_tokens`.
-             */
-            chunk_overlap_tokens: number;
-
-            /**
-             * The maximum number of tokens in each chunk. The default value is `800`. The
-             * minimum value is `100` and the maximum value is `4096`.
-             */
-            max_chunk_size_tokens: number;
-          }
-        }
-      }
-    }
-
-    export interface UnionMember1 {
-      /**
-       * A helper to create a [vector store](/docs/api-reference/vector-stores/object)
-       * with file_ids and attach it to this thread. There can be a maximum of 1 vector
-       * store attached to the thread.
-       */
-      vector_stores: Array<UnionMember1.VectorStore>;
-
+    export interface FileSearch {
       /**
        * The [vector store](/docs/api-reference/vector-stores/object) attached to this
        * thread. There can be a maximum of 1 vector store attached to the thread.
        */
       vector_store_ids?: Array<string>;
+
+      /**
+       * A helper to create a [vector store](/docs/api-reference/vector-stores/object)
+       * with file_ids and attach it to this thread. There can be a maximum of 1 vector
+       * store attached to the thread.
+       */
+      vector_stores?: Array<FileSearch.VectorStore>;
     }
 
-    export namespace UnionMember1 {
+    export namespace FileSearch {
       export interface VectorStore {
         /**
          * The chunking strategy used to chunk the file(s). If not set, will use the `auto`
@@ -523,21 +460,32 @@ export namespace ThreadUpdateParams {
   }
 }
 
-export namespace Threads {
-  export import ThreadObject = ThreadsAPI.ThreadObject;
-  export import ThreadDeleteResponse = ThreadsAPI.ThreadDeleteResponse;
-  export import ThreadCreateParams = ThreadsAPI.ThreadCreateParams;
-  export import ThreadUpdateParams = ThreadsAPI.ThreadUpdateParams;
-  export import Messages = MessagesAPI.Messages;
-  export import MessageObject = MessagesAPI.MessageObject;
-  export import MessageListResponse = MessagesAPI.MessageListResponse;
-  export import MessageDeleteResponse = MessagesAPI.MessageDeleteResponse;
-  export import MessageCreateParams = MessagesAPI.MessageCreateParams;
-  export import MessageListParams = MessagesAPI.MessageListParams;
-  export import Runs = RunsAPI.Runs;
-  export import RunObject = RunsAPI.RunObject;
-  export import RunListResponse = RunsAPI.RunListResponse;
-  export import RunCreateParams = RunsAPI.RunCreateParams;
-  export import RunListParams = RunsAPI.RunListParams;
-  export import RunSubmitToolOutputsParams = RunsAPI.RunSubmitToolOutputsParams;
+Threads.Messages = Messages;
+Threads.Runs = Runs;
+
+export declare namespace Threads {
+  export {
+    type ThreadObject as ThreadObject,
+    type ThreadDeleteResponse as ThreadDeleteResponse,
+    type ThreadCreateParams as ThreadCreateParams,
+    type ThreadUpdateParams as ThreadUpdateParams,
+  };
+
+  export {
+    Messages as Messages,
+    type MessageObject as MessageObject,
+    type MessageListResponse as MessageListResponse,
+    type MessageDeleteResponse as MessageDeleteResponse,
+    type MessageCreateParams as MessageCreateParams,
+    type MessageListParams as MessageListParams,
+  };
+
+  export {
+    Runs as Runs,
+    type RunObject as RunObject,
+    type RunListResponse as RunListResponse,
+    type RunCreateParams as RunCreateParams,
+    type RunListParams as RunListParams,
+    type RunSubmitToolOutputsParams as RunSubmitToolOutputsParams,
+  };
 }

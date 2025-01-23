@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as EventsAPI from './events';
 
 export class Events extends APIResource {
   /**
@@ -62,7 +61,6 @@ export interface EventListParams {
   limit?: number;
 }
 
-export namespace Events {
-  export import EventListResponse = EventsAPI.EventListResponse;
-  export import EventListParams = EventsAPI.EventListParams;
+export declare namespace Events {
+  export { type EventListResponse as EventListResponse, type EventListParams as EventListParams };
 }

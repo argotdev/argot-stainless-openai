@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as ModelsAPI from './models';
 
 export class Models extends APIResource {
   /**
@@ -69,8 +68,10 @@ export interface ModelDeleteResponse {
   object: string;
 }
 
-export namespace Models {
-  export import Model = ModelsAPI.Model;
-  export import ModelListResponse = ModelsAPI.ModelListResponse;
-  export import ModelDeleteResponse = ModelsAPI.ModelDeleteResponse;
+export declare namespace Models {
+  export {
+    type Model as Model,
+    type ModelListResponse as ModelListResponse,
+    type ModelDeleteResponse as ModelDeleteResponse,
+  };
 }

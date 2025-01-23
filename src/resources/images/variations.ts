@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as VariationsAPI from './variations';
 import * as Shared from '../shared';
 
 export class Variations extends APIResource {
@@ -53,6 +52,6 @@ export interface VariationCreateParams {
   user?: string;
 }
 
-export namespace Variations {
-  export import VariationCreateParams = VariationsAPI.VariationCreateParams;
+export declare namespace Variations {
+  export { type VariationCreateParams as VariationCreateParams };
 }

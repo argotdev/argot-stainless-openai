@@ -32,15 +32,15 @@ describe('resource auditLogs', () => {
     await expect(
       client.organization.auditLogs.list(
         {
-          actor_emails: ['string', 'string', 'string'],
-          actor_ids: ['string', 'string', 'string'],
+          actor_emails: ['string'],
+          actor_ids: ['string'],
           after: 'after',
           before: 'before',
           effective_at: { gt: 0, gte: 0, lt: 0, lte: 0 },
-          event_types: ['api_key.created', 'api_key.updated', 'api_key.deleted'],
+          event_types: ['api_key.created'],
           limit: 0,
-          project_ids: ['string', 'string', 'string'],
-          resource_ids: ['string', 'string', 'string'],
+          project_ids: ['string'],
+          resource_ids: ['string'],
         },
         { path: '/_stainless_unknown_path' },
       ),

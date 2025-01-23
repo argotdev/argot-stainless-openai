@@ -2,22 +2,18 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ContentAPI from './content';
 
 export class Content extends APIResource {
   /**
    * Returns the contents of the specified file.
    */
   retrieve(fileId: string, options?: Core.RequestOptions): Core.APIPromise<string> {
-    return this._client.get(`/files/${fileId}/content`, {
-      ...options,
-      headers: { Accept: 'application/json', ...options?.headers },
-    });
+    return this._client.get(`/files/${fileId}/content`, options);
   }
 }
 
 export type ContentRetrieveResponse = string;
 
-export namespace Content {
-  export import ContentRetrieveResponse = ContentAPI.ContentRetrieveResponse;
+export declare namespace Content {
+  export { type ContentRetrieveResponse as ContentRetrieveResponse };
 }

@@ -3,7 +3,6 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as FileBatchesFilesAPI from './files';
 import * as FilesAPI from '../files';
 
 export class Files extends APIResource {
@@ -84,7 +83,6 @@ export interface FileListParams {
   order?: 'asc' | 'desc';
 }
 
-export namespace Files {
-  export import FileListResponse = FileBatchesFilesAPI.FileListResponse;
-  export import FileListParams = FileBatchesFilesAPI.FileListParams;
+export declare namespace Files {
+  export { type FileListResponse as FileListResponse, type FileListParams as FileListParams };
 }

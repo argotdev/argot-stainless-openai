@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as ModerationsAPI from './moderations';
 
 export class Moderations extends APIResource {
   /**
@@ -357,7 +356,9 @@ export namespace ModerationCreateParams {
   }
 }
 
-export namespace Moderations {
-  export import ModerationCreateResponse = ModerationsAPI.ModerationCreateResponse;
-  export import ModerationCreateParams = ModerationsAPI.ModerationCreateParams;
+export declare namespace Moderations {
+  export {
+    type ModerationCreateResponse as ModerationCreateResponse,
+    type ModerationCreateParams as ModerationCreateParams,
+  };
 }

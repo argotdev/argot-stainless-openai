@@ -2,15 +2,20 @@
 
 import { APIResource } from '../../resource';
 import * as JobsAPI from './jobs/jobs';
+import { FineTuningJob, JobCreateParams, JobListParams, JobListResponse, Jobs } from './jobs/jobs';
 
 export class FineTuning extends APIResource {
   jobs: JobsAPI.Jobs = new JobsAPI.Jobs(this._client);
 }
 
-export namespace FineTuning {
-  export import Jobs = JobsAPI.Jobs;
-  export import FineTuningJob = JobsAPI.FineTuningJob;
-  export import JobListResponse = JobsAPI.JobListResponse;
-  export import JobCreateParams = JobsAPI.JobCreateParams;
-  export import JobListParams = JobsAPI.JobListParams;
+FineTuning.Jobs = Jobs;
+
+export declare namespace FineTuning {
+  export {
+    Jobs as Jobs,
+    type FineTuningJob as FineTuningJob,
+    type JobListResponse as JobListResponse,
+    type JobCreateParams as JobCreateParams,
+    type JobListParams as JobListParams,
+  };
 }

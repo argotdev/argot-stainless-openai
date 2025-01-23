@@ -3,9 +3,10 @@
 import { APIResource } from '../../../resource';
 import { isRequestOptions } from '../../../core';
 import * as Core from '../../../core';
-import * as JobsAPI from './jobs';
 import * as CheckpointsAPI from './checkpoints';
+import { CheckpointListParams, CheckpointListResponse, Checkpoints } from './checkpoints';
 import * as EventsAPI from './events';
+import { EventListParams, EventListResponse, Events } from './events';
 
 export class Jobs extends APIResource {
   events: EventsAPI.Events = new EventsAPI.Events(this._client);
@@ -406,15 +407,26 @@ export interface JobListParams {
   limit?: number;
 }
 
-export namespace Jobs {
-  export import FineTuningJob = JobsAPI.FineTuningJob;
-  export import JobListResponse = JobsAPI.JobListResponse;
-  export import JobCreateParams = JobsAPI.JobCreateParams;
-  export import JobListParams = JobsAPI.JobListParams;
-  export import Events = EventsAPI.Events;
-  export import EventListResponse = EventsAPI.EventListResponse;
-  export import EventListParams = EventsAPI.EventListParams;
-  export import Checkpoints = CheckpointsAPI.Checkpoints;
-  export import CheckpointListResponse = CheckpointsAPI.CheckpointListResponse;
-  export import CheckpointListParams = CheckpointsAPI.CheckpointListParams;
+Jobs.Events = Events;
+Jobs.Checkpoints = Checkpoints;
+
+export declare namespace Jobs {
+  export {
+    type FineTuningJob as FineTuningJob,
+    type JobListResponse as JobListResponse,
+    type JobCreateParams as JobCreateParams,
+    type JobListParams as JobListParams,
+  };
+
+  export {
+    Events as Events,
+    type EventListResponse as EventListResponse,
+    type EventListParams as EventListParams,
+  };
+
+  export {
+    Checkpoints as Checkpoints,
+    type CheckpointListResponse as CheckpointListResponse,
+    type CheckpointListParams as CheckpointListParams,
+  };
 }

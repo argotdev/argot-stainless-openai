@@ -2,8 +2,8 @@
 
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
-import * as FileBatchesAPI from './file-batches';
 import * as FilesAPI from './files';
+import { FileListParams, FileListResponse, Files } from './files';
 
 export class FileBatches extends APIResource {
   files: FilesAPI.Files = new FilesAPI.Files(this._client);
@@ -162,10 +162,13 @@ export namespace FileBatchCreateParams {
   }
 }
 
-export namespace FileBatches {
-  export import VectorStoreFileBatchObject = FileBatchesAPI.VectorStoreFileBatchObject;
-  export import FileBatchCreateParams = FileBatchesAPI.FileBatchCreateParams;
-  export import Files = FilesAPI.Files;
-  export import FileListResponse = FilesAPI.FileListResponse;
-  export import FileListParams = FilesAPI.FileListParams;
+FileBatches.Files = Files;
+
+export declare namespace FileBatches {
+  export {
+    type VectorStoreFileBatchObject as VectorStoreFileBatchObject,
+    type FileBatchCreateParams as FileBatchCreateParams,
+  };
+
+  export { Files as Files, type FileListResponse as FileListResponse, type FileListParams as FileListParams };
 }
